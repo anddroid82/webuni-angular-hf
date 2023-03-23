@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'webuni-angular-hf2';
+  activeTimezone:string = 'Europe/Budapest';
+
+  activeTimezoneChanged(timezone:string){
+    this.activeTimezone = timezone;
+  }
+
 }
