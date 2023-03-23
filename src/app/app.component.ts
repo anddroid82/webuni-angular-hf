@@ -12,5 +12,4 @@ export class AppComponent {
   activeTimezoneChanged(timezone:string){
     this.activeTimezone = timezone;
   }
-
 }
