@@ -1,5 +1,6 @@
-.timezone {
-    margin: 10px auto;
+.addBtn {
+    background: #454546;
+    color: white;
 }
 .addBtnHide {
     display: none;
