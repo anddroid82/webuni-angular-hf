@@ -7,9 +7,28 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'webuni-angular-hf2';
-  activeTimezone:string = 'Europe/Budapest';
+  timezones:{id:number, timezone:string,isActive:boolean}[] = [
+    {id:1,timezone:'Europe/Budapest',isActive: false},
+    {id:2,timezone:'Europe/London',isActive: false},
+  ];
 
   activeTimezoneChanged(timezone:string){
-    this.activeTimezone = timezone;
+    this.timezones.forEach((v) => {
+      v.isActive = timezone === v.timezone;
+    });
+    console.log(this.timezones);
+  }
+
+  timezoneChanged(event:any) {
+    let item = this.timezones.find(v => v.id === event.id);
+    console.log(event);
+  }
+
+  addTimezoneComponent() {
+    this.timezones.push({
+      id:this.timezones.length,
+      timezone: '',
+      isActive: false
+    });
   }
 }

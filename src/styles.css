@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+button {
+    background: #29479a;
+    color: white;
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    display: inline-block;
+}
+button:hover {
+    cursor: pointer;
+}
+button:disabled {
+    background: #868687;
+    cursor: inherit;
+}
+.addBtn {
+    background: #454546;
+    color: white;
+}

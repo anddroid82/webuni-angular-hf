@@ -1,6 +1,11 @@
-<app-timezone class="timezone" [timezone]="'Europe/Budapest'"
+<h2>Timezones</h2>
+<!--<app-timezone [timezone]="'Europe/Budapest'"
   [isActive]="this.activeTimezone === 'Europe/Budapest'" (activeTimezoneChange)="activeTimezoneChanged($event)"></app-timezone>
-<app-timezone class="timezone" [timezone]="'US/Pacific'"
+<app-timezone [timezone]="'US/Pacific'"
   [isActive]="this.activeTimezone === 'US/Pacific'" (activeTimezoneChange)="activeTimezoneChanged($event)"></app-timezone>
-<app-timezone class="timezone" [timezone]="'Europe/London'"
-  [isActive]="this.activeTimezone === 'Europe/London'" (activeTimezoneChange)="activeTimezoneChanged($event)"></app-timezone>
+<app-timezone [timezone]="'Europe/London'"
+  [isActive]="this.activeTimezone === 'Europe/London'" (activeTimezoneChange)="activeTimezoneChanged($event)"></app-timezone>-->
+
+<app-timezone *ngFor="let t of timezones" [timezone]="t.timezone" [isActive]="t.isActive"
+  (activeTimezoneChange)="activeTimezoneChanged($event)" (timezoneChange)="timezoneChanged($event)"></app-timezone>
+<button class="addBtn" (click)="addTimezoneComponent()">Új hozzáadása</button>

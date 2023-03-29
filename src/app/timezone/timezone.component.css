@@ -1,0 +1,9 @@
+.timezone {
+    border: 1px solid #a1a1a1;
+    padding: 20px;
+    width: 200px;
+    margin: 10px 0;
+}
+.active {
+    background: #c1e4f9;
+}
