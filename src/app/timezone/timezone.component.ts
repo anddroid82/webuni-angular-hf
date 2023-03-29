@@ -10,6 +10,7 @@ export class TimezoneComponent implements OnInit {
   @Input() timezone: string = '';
   @Input() isActive: boolean = false;
   timeString: string = '';
+  timeObj:Date = new Date();
   @Output() activeTimezoneChange = new EventEmitter<string>();
   @Output() timezoneChange = new EventEmitter<{ id: number, timezone: string }>();
 
@@ -24,6 +25,7 @@ export class TimezoneComponent implements OnInit {
   setTimezoneString() {
     this.setTimezone();
     try {
+      this.timeObj = new Date();
       this.timeString = new Date().toLocaleString("hu-HU", { timeZone: this.timezone });
     } catch (ex) {
       this.timeString = 'Hibás formátum!';

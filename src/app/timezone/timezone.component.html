@@ -1,6 +1,6 @@
 <div class="timezone" [class.active]="isActive">
     <input type="text" [(ngModel)]="timezone"><br>
-    <span id="timeString">{{timeString}}</span><br>
+    <span id="timeString">{{timeObj | date:'y MMM d, H:mm:ss'}}</span><br>
     <button (click)="setTimezoneString()">Frissítés</button><button (click)="setActiveTimezone()"
         [disabled]="isActive">Jelenleginek jelöl</button>
 </div>
