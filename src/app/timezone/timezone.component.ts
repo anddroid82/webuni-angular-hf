@@ -17,8 +17,8 @@ export class TimezoneComponent implements OnInit {
     this.setTimezoneString();
   }
 
-  timezoneChange(){
-    this.timezoneChange.emit({id:this.id,timezone:this.timezone})
+  setTimezone(){
+    this.timezoneChange.emit();
   }
 
   setTimezoneString(){

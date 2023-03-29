@@ -6,6 +6,6 @@
 <app-timezone [timezone]="'Europe/London'"
   [isActive]="this.activeTimezone === 'Europe/London'" (activeTimezoneChange)="activeTimezoneChanged($event)"></app-timezone>-->
 
-<app-timezone *ngFor="let t of timezones" [timezone]="t.timezone" [isActive]="t.isActive"
+<app-timezone *ngFor="let t of timezones" [id]="t.id" [timezone]="t.timezone" [isActive]="t.isActive"
   (activeTimezoneChange)="activeTimezoneChanged($event)" (timezoneChange)="timezoneChanged($event)"></app-timezone>
 <button class="addBtn" (click)="addTimezoneComponent()">Új hozzáadása</button>
