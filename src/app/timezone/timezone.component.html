@@ -1,5 +1,5 @@
 <div class="timezone" [class.active]="isActive">
-    <input type="text" [(ngModel)]="timezone" (ngModelChange)="setTimezone()"><br>
+    <input type="text" [(ngModel)]="timezone"><br>
     <span id="timeString">{{timeString}}</span><br>
     <button (click)="setTimezoneString()">Frissítés</button><button (click)="setActiveTimezone()"
         [disabled]="isActive">Jelenleginek jelöl</button>

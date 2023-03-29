@@ -20,13 +20,20 @@ export class AppComponent {
   }
 
   timezoneChanged(event:any) {
-    let item = this.timezones.find(v => v.id === event.id);
+    this.timezones.forEach((v) => {
+      if (v.id === event.id) v.timezone = event.timezone;
+    });
     console.log(event);
+  }
+
+  get getMaxId(){
+    const ids = this.timezones.map((v) => v.id);
+    return Math.max(...ids);
   }
 
   addTimezoneComponent() {
     this.timezones.push({
-      id:this.timezones.length,
+      id:this.getMaxId+1,
       timezone: '',
       isActive: false
     });

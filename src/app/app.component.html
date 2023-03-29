@@ -8,4 +8,4 @@
 
 <app-timezone *ngFor="let t of timezones" [id]="t.id" [timezone]="t.timezone" [isActive]="t.isActive"
   (activeTimezoneChange)="activeTimezoneChanged($event)" (timezoneChange)="timezoneChanged($event)"></app-timezone>
-<button class="addBtn" (click)="addTimezoneComponent()">Új hozzáadása</button>
+<button class="addBtn" (click)="addTimezoneComponent()" [class.addBtnHide]="this.timezones.length>=5">Új hozzáadása</button>
