@@ -10,7 +10,8 @@ export class TimezoneComponent implements OnInit {
   @Input() timezone: string = '';
   @Input() isActive: boolean = false;
   timeString: string = '';
-  timeObj:Date = new Date();
+  timeObj: Date = new Date();
+  timeError: string = '';
   @Output() activeTimezoneChange = new EventEmitter<string>();
   @Output() timezoneChange = new EventEmitter<{ id: number, timezone: string }>();
 
@@ -23,14 +24,14 @@ export class TimezoneComponent implements OnInit {
   }
 
   setTimezoneString() {
-    this.setTimezone();
+    this.timeError = '';
     try {
-      this.timeObj = new Date();
-      this.timeString = new Date().toLocaleString("hu-HU", { timeZone: this.timezone });
+      this.timeString = new Date().toLocaleString("en", { timeZone: this.timezone });
+      this.timeObj = new Date(this.timeString);
+      this.setTimezone();
     } catch (ex) {
-      this.timeString = 'Hibás formátum!';
+      this.timeError = 'Hibás formátum!';
     }
-
   }
 
   setActiveTimezone() {

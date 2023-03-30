@@ -16,14 +16,12 @@ export class AppComponent {
     this.timezones.forEach((v) => {
       v.isActive = timezone === v.timezone;
     });
-    console.log(this.timezones);
   }
 
   timezoneChanged(event:any) {
     this.timezones.forEach((v) => {
       if (v.id === event.id) v.timezone = event.timezone;
     });
-    console.log(event);
   }
 
   get getMaxId(){
